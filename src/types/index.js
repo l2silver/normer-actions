@@ -31,7 +31,7 @@ type $relationshipActionsCreator = {
   create?: (relationshipName: string, id: $id, value: $id | $id[])=>any
 }
 
-export type $relationshipsActionsCreatorGenerator = (entityName: string, relationshipName: string)=>$relationshipActionsCreator
+export type $relationshipsActionsCreatorGenerator = (entityName: string)=>$relationshipActionsCreator
 
 export type $relationshipOptions = {
   [key: $id]: {

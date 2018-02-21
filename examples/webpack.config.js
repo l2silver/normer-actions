@@ -16,6 +16,12 @@ module.exports = {
       'redux'
     ]
   },
+  resolve: {
+    fallback: path.join(__dirname, 'node_modules'),
+    symlinks: false
+  },
+  resolveLoader: { fallback: path.join(__dirname, "node_modules") },
+
   output: {
     path: path.join(__dirname, './static'),
     filename: 'bundle.js',

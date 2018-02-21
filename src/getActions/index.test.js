@@ -6,8 +6,8 @@ describe('getActions', () => {
 
   const relationshipActionsCreatorGenerator = (entityName, name, id)=>({
     users: {
-      create: (value) => ({ payload: { name, id, value } }),
-      concat: (value) => ({
+      create: (name, id, value) => ({ payload: { name, id, value } }),
+      concat: (name, id, value) => ({
         payload: { name, id, value },
         type: 'concat'
       })

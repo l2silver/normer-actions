@@ -8,14 +8,12 @@ import pagesSchema from '../schemas/pages'
 const addTodo = createAction('add todo entity')
 const addHomePageRelationship = createAction('add home page relationship')
 
-
-
 const entityActionsCreatorGenerator = (entityName, id)=>({
   get: (ent)=>addTodo(ent),
 })
 
-const relationshipActionsCreatorGenerator = (entityName, id)=>({
-  create: (idValue)=>addHomePageRelationship(idValue),
+const relationshipActionsCreatorGenerator = (entityName)=>({
+  create: (relationshipName, id, value)=>addHomePageRelationship(value),
 })
 
 const normerActionCreators = createNormerActionCreators(entityActionsCreatorGenerator, relationshipActionsCreatorGenerator, schema)

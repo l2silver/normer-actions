@@ -17,11 +17,11 @@ export default function getRelationshipActions (
       const idValueArray = relationshipMap[relationshipName];
       return idValueArray.reduce((fFR, {id, value}) => {
         const options = optionsGenerator(entityName, relationshipName, id);
-        const relationshipActions = relationshipActionsCreatorGenerator(entityName, relationshipName, id);
+        const relationshipActions = relationshipActionsCreatorGenerator(entityName);
         fFR.push(
           relationshipActions[
             get(options, `${id}.actionName`, 'create')
-          ](value)
+          ](relationshipName, id, value)
         );
         return fFR;
       }, fR);
